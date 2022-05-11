@@ -14,7 +14,7 @@ const Testimonial = () => {
 
 
     return (
-        <section className='py-20 md:px-14'>
+        <section className='pt-20 md:px-14'>
             <div className='flex px-4 md:px-0'>
                 <div className='flex-1'>
                     <h4 className='text-primary text-sm md:text-xl font-bold '>Testimonial</h4>
