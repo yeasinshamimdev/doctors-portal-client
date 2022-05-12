@@ -6,6 +6,7 @@ import Info from './Info';
 import Services from './Services';
 import Testimonial from './Testimonial';
 import Contact from './Contact';
+import Footer from '../Shared/Footer';
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
             <MakeAppointment />
             <Testimonial />
             <Contact />
+            <Footer />
         </div>
     );
 };
