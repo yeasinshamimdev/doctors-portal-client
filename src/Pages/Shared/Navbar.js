@@ -13,8 +13,15 @@ const Navbar = () => {
         <li><Link className='font-bold' to='/reviews'>Reviews</Link></li>
         <li><Link className='font-bold' to='/contact'>Contact Us</Link></li>
         <li><Link className='font-bold' to='/about' > About</Link></li>
+
         {
-            user ? <button onClick={() => signOut(auth)} className='btn btn-sm font-bold'>sign out</button> :
+            user && <li><Link to='dashboard' className='font-bold'>Dashboard</Link></li>
+        }
+        {
+            user ? <button onClick={() => {
+                signOut(auth);
+                localStorage.removeItem('accessToken');
+            }} className='btn btn-md font-bold'>sign out</button> :
                 <li><Link className='font-bold' to='/login'>Login</Link></li>
         }
     </>
@@ -37,6 +44,11 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal p-0">
                         {menuItems}
                     </ul>
+                </div>
+                <div className="navbar-end lg:hidden">
+                    <label tabIndex="1" htmlFor="dashboard-sidebar" className="btn btn-ghost drawer-button lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </label>
                 </div>
             </div>
         </div>
